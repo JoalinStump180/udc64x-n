@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Standalone JSON MCP Explorer</title>
+  <link rel="stylesheet" href="explorer.css" />
+</head>
+<body>
+  <header class="global-toolbar">
+    <strong class="app-name">JSON MCP Explorer</strong>
+    <label class="directory-wrap">
+      <span>Directory</span>
+      <input id="rootPath" type="text" spellcheck="false" placeholder="D:\\MyDocuments" />
+    </label>
+    <button id="browseBtn" type="button">Browse…</button>
+    <label class="global-query-wrap">
+      <span>Global search</span>
+      <input id="globalQuery" type="search" placeholder="Search JSON file contents…" autocomplete="off" />
+    </label>
+    <label class="pattern-wrap">
+      <span>File pattern</span>
+      <input id="filePattern" type="text" value="**/*.json" spellcheck="false" />
+    </label>
+    <label class="check"><input id="globalRegex" type="checkbox" /> Regex</label>
+    <label class="check"><input id="globalCase" type="checkbox" /> Case</label>
+    <button id="searchBtn" class="primary" type="button">Search</button>
+    <button id="stopBtn" type="button" disabled>Stop</button>
+  </header>
+
+  <div class="search-status-row">
+    <span id="bridgeStatus">Checking local bridge…</span>
+    <span id="globalStatus">Ready. Search results will be grouped by JSON file.</span>
+  </div>
+
+  <nav id="documentTabs" class="document-tabs" aria-label="Open JSON documents">
+    <span class="tabs-empty">No JSON documents open</span>
+  </nav>
+
+  <main class="workspace">
+    <section class="results-pane" aria-label="Global search results">
+      <div class="pane-heading">
+        <strong>thpane · Global JSON results</strong>
+        <span id="resultSummary">0 files · 0 hits</span>
+      </div>
+      <div id="globalResults" class="global-results">
+        <div class="empty-state">Choose a directory, enter a search term, and click Search.</div>
+      </div>
+    </section>
+
+    <section class="document-pane" aria-label="JSON document viewer">
+      <div id="noDocument" class="no-document">
+        <div class="empty-icon">{ }</div>
+        <strong>No JSON document selected</strong>
+        <span>Run a global search, then use a result's Jump button or Open button.</span>
+      </div>
+      <div id="documentView" class="document-view" hidden>
+        <div class="document-toolbar">
+          <div class="document-title-wrap">
+            <strong id="activeDocumentName">document.json</strong>
+            <span id="activeDocumentPath"></span>
+          </div>
+          <div class="nav-group global-hit-nav">
+            <span class="counter-label">Global hit</span>
+            <span id="globalHitCounter" class="counter">0 / 0</span>
+            <button id="prevGlobalHit" type="button" title="Previous global hit">◀</button>
+            <button id="nextGlobalHit" type="button" title="Next global hit">▶</button>
+          </div>
+          <div class="local-search-wrap">
+            <span class="counter-label">KW2 · visible elements</span>
+            <input id="localQuery" type="search" placeholder="Search this tab's visible tree…" autocomplete="off" />
+            <span id="localHitCounter" class="counter">0 / 0</span>
+            <button id="prevLocalHit" type="button" title="Previous local search hit">◀</button>
+            <button id="nextLocalHit" type="button" title="Next local search hit">▶</button>
+          </div>
+        </div>
+        <div id="documentMessage" class="document-message"></div>
+        <div id="jsonTree" class="json-tree"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="statusBar" class="status-bar">Local bridge: http://127.0.0.1:3211</footer>
+  <script src="explorer.js"></script>
+</body>
+</html>

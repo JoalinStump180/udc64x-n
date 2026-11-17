@@ -1,0 +1,11 @@
+
+do this : 
+let 's focus on index.html , now update this into : the new index.html contains 3 big floating window,that can be dragged to changed posision, or sticked , or docked to some side , by some checkbox on its title banner .
+
+  and 2 of them 's layout is just as the same as the current div main , and they can be dragged on the side or corner to adjust the showing area while the inside element's ratio is kept  ;   
+
+and 1 of them contians an video port   , with some text before and after (outside the video port )  , and user can load a video (or say it allows user to choose an    a local pc 's  video path to it ),, and in the bottom line inside the videoport there is some start/pause ,snd vol control , and current/total time  button  like youtube 's watch page ui 's  . 
+
+i dont 's know if this video port page 's dimension can be controlled by corner drag. if yes , enable that. let the video UI 's size follows the video page 's size
+
+can u   ?

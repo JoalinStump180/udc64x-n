@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Blob Page Downloader",
+  "version": "1.0.0",
+  "description": "Download the currently open page, including blob: HTML pages, as a standalone HTML file.",
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "Download this page as HTML"
+  }
+}

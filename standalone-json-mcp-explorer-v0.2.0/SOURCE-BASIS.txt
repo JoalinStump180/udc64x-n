@@ -1,0 +1,7 @@
+Source basis: explorer(20261031-163405)-chatmeta.html (Library item, created 2026-10-31).
+
+The standalone UI retains the original Explorer's compact Segoe UI / Windows
+control styling and pane-oriented layout idea. It intentionally removes the
+AI Chat Logger-specific database, conversation table, favorites, routes,
+import/export, and logger script dependencies. This package is a separate
+extension with its own manifest and local MCP bridge.

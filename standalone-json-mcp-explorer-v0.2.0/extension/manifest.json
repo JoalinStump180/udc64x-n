@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Standalone JSON MCP Explorer",
+  "version": "0.2.0",
+  "description": "Search JSON files through a local Filesystem MCP bridge and inspect each document in its own tab.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["http://127.0.0.1:3211/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open JSON MCP Explorer"
+  }
+}

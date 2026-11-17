@@ -1,0 +1,8 @@
+{
+  "manifest_version": 3,
+  "name": "Math Note Test",
+  "version": "0.1.0",
+  "description": "Paste text, render math, save 40 titled notes in IndexedDB.",
+  "action": { "default_title": "Open Math Note" },
+  "background": { "service_worker": "background.js" }
+}
